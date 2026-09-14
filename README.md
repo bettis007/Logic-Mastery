@@ -68,6 +68,7 @@ python test_integration.py
 python test_policy_contracts.py
 python test_server.py
 python test_refinements.py
+python test_integrity_audit.py
 node test_ui_state.cjs  # Optional Node.js state-coordination check
 python benchmark_app.py
 ```
@@ -119,6 +120,13 @@ GitHub versions the design and implementation now. Cloud resources and costs
 are not configured by this repository. No production authentication, persistent
 multi-user storage, natural-language extraction or cloud deployment is claimed.
 See docs/ARCHITECTURE.md for the implemented and planned boundaries.
+
+## Integrity and evidence reporting
+
+See [integrity and preview security](docs/INTEGRITY_SECURITY.md) for the read-only
+Git-reference audit tool, its scope and controlled mutation tests. Records expose
+`handling_action` separately from `evidence_category` (currently unassessed/null).
+Legacy decisions and probabilities remain available for replay comparisons.
 
 ## Repository description
 

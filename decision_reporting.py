@@ -29,7 +29,10 @@ def decisions(probabilities, features, minimum_confidence, accept_evidence_gate)
     final=frozen._apply_logic_gates(p,x,minimum_confidence,accept_evidence_gate)
     top=np.argmax(p,axis=1)
     return [{
-        'schema_version':'2.0.0',
+        'schema_version':'2.1.0',
+        'evidence_category':None,
+        'evidence_category_status':'Not independently assessed; legacy classifier labels mix categories and actions.',
+        'handling_action':{'ACCEPT':'accept_under_policy','QUALIFY':'review_with_qualification','SIMULATED':'retain_simulation_label','NARRATIVE':'retain_narrative_label','QUARANTINE':'quarantine_for_review'}[frozen.LABELS[int(final[i])]],
         'classifier_top_label':frozen.LABELS[int(top[i])],
         'classifier_top_label_probability':float(p[i,top[i]]),
         'final_policy_label':frozen.LABELS[int(final[i])],

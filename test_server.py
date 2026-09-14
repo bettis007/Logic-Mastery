@@ -15,7 +15,17 @@ try:
     code,body=call('/');assert code==200 and b'Decision ledger'.lower() in body.lower();checks['page_served']=True
     assert call('/originals/frozen_2026-09-03.json')[0]==404;checks['only_allowlisted_assets']=True
     assert call('/',headers={'Host':'untrusted.example'})[0]==403;checks['host_rejected']=True
+    for route,filename in [('/app.js','web/app.js'),('/style.css','web/style.css'),('/','web/index.html')]:
+        with urllib.request.urlopen(url+route,timeout=20) as response:
+            assert response.read()==Path(filename).read_bytes()
+            assert response.headers['X-Content-Type-Options']=='nosniff'
+            assert response.headers['Cache-Control']=='no-store'
+            csp=response.headers['Content-Security-Policy']
+            assert "script-src 'self'" in csp and "frame-ancestors 'none'" in csp
+    checks['three_served_assets_match_disk_and_security_headers']=True
+    assert call('/../server.py')[0]==404;checks['traversal_not_served']=True
     token=json.loads(call('/api/session')[1])['token'];headers={'X-Session-Token':token}
+    assert call('/api/predict',{'examples':[]},{'X-Session-Token':'invalid-token'})[0]==403;checks['invalid_token_rejected']=True
     demo=json.loads(call('/api/demo')[1]);labels=json.loads(call('/api/demo-labels')[1])
     assert call('/api/predict',demo)[0]==403;checks['token_required']=True
     assert call('/api/predict',demo,{**headers,'Origin':'https://untrusted.example'})[0]==403;checks['cross_origin_rejected']=True

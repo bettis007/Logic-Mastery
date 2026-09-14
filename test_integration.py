@@ -9,6 +9,7 @@ request=json.loads((ROOT/'demo/features.json').read_text())
 baseline=json.loads((ROOT/'originals/frozen_2026-09-03.json').read_text())
 first=predict(request);second=predict(request)
 assert first==second
+assert all(r['evidence_category'] is None and r['handling_action'] for r in first['records'])
 expected=baseline['corpus_summary']['canonical_traces']
 for actual,old in zip(first['records'],expected):
     assert actual['id']==old['fixture_id']
