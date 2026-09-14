@@ -1,0 +1,141 @@
+{
+  "deterministic_replay_exact": true,
+  "protocol_boundary_checks": "passed; see report for scope",
+  "run1": {
+    "deterministic": {
+      "accuracy": 0.7698888888888888,
+      "benign_false_alarm_rate": 0.03266666666666666,
+      "config": {
+        "max_bytes": 16384,
+        "mean_limit": 0.5,
+        "requests_per_second": 20,
+        "rms_limit": 1.5,
+        "sample_count": 128,
+        "spectral_fraction_limit": 0.6
+      },
+      "confusion": {
+        "fn": 1973,
+        "fp": 98,
+        "tn": 2902,
+        "tp": 4027
+      },
+      "decision_trace_sha256": "cd1b1f9798df1efb80ca71ffd45631f9499d8815e9c3e1189fb4975414ee142e",
+      "excluded_setup_events": 1020,
+      "flag_precision": 0.9762424242424242,
+      "flag_recall": 0.6711666666666667,
+      "limitations": [
+        "Public fixture key; no real authentication deployment",
+        "Review flags are anomalies, not attack attribution",
+        "Signal classes and sample mix are artificial",
+        "No encryption or protection against authenticated data theft",
+        "No biological model or RF measurements",
+        "State is process-local; restart/reordering recovery untested"
+      ],
+      "n": 9000,
+      "scope": "Synthetic software-message and numeric-waveform experiment only",
+      "seed": 20260914,
+      "slices": {
+        "clean": {
+          "allowed": 2000,
+          "flag_rate": 0.0,
+          "flagged": 0,
+          "n": 2000,
+          "outcomes": {
+            "allow": 2000
+          }
+        },
+        "legitimate_stress": {
+          "allowed": 902,
+          "flag_rate": 0.098,
+          "flagged": 98,
+          "n": 1000,
+          "outcomes": {
+            "allow": 902,
+            "review_signal": 98
+          }
+        },
+        "modified_payload": {
+          "allowed": 0,
+          "flag_rate": 1.0,
+          "flagged": 1000,
+          "n": 1000,
+          "outcomes": {
+            "reject_authentication": 1000
+          }
+        },
+        "overflow_burst": {
+          "allowed": 0,
+          "flag_rate": 1.0,
+          "flagged": 500,
+          "n": 500,
+          "outcomes": {
+            "reject_rate": 500
+          }
+        },
+        "oversize": {
+          "allowed": 0,
+          "flag_rate": 1.0,
+          "flagged": 500,
+          "n": 500,
+          "outcomes": {
+            "reject_size": 500
+          }
+        },
+        "replay": {
+          "allowed": 0,
+          "flag_rate": 1.0,
+          "flagged": 1000,
+          "n": 1000,
+          "outcomes": {
+            "reject_replay": 1000
+          }
+        },
+        "strong_tone": {
+          "allowed": 0,
+          "flag_rate": 1.0,
+          "flagged": 1000,
+          "n": 1000,
+          "outcomes": {
+            "review_signal": 1000
+          }
+        },
+        "validly_signed_false_content": {
+          "allowed": 1000,
+          "flag_rate": 0.0,
+          "flagged": 0,
+          "n": 1000,
+          "outcomes": {
+            "allow": 1000
+          }
+        },
+        "weak_tone": {
+          "allowed": 973,
+          "flag_rate": 0.027,
+          "flagged": 27,
+          "n": 1000,
+          "outcomes": {
+            "allow": 973,
+            "review_signal": 27
+          }
+        }
+      }
+    },
+    "source_sha256": "83d417e8d7b63040d985db26a874defbec5e205a0e16b7e809ee08062cbd29d8",
+    "timing": {
+      "includes": "inspection only; excludes signing, generation and setup; one measured process",
+      "machine": "x86_64",
+      "median_us": 161.17,
+      "numpy": "2.3.5",
+      "p95_us": 1170.6533499999982,
+      "python": "3.12.14"
+    }
+  },
+  "run2_timing": {
+    "includes": "inspection only; excludes signing, generation and setup; one measured process",
+    "machine": "x86_64",
+    "median_us": 167.3685,
+    "numpy": "2.3.5",
+    "p95_us": 1130.071,
+    "python": "3.12.14"
+  }
+}

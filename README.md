@@ -128,6 +128,13 @@ Git-reference audit tool, its scope and controlled mutation tests. Records expos
 `handling_action` separately from `evidence_category` (currently unassessed/null).
 Legacy decisions and probabilities remain available for replay comparisons.
 
+## Synthetic signal/message guard experiment
+
+[Simulation report](docs/SIGNAL_GUARD_REPORT.md) and [measured results](docs/guard_simulation_results.json)
+document the standalone `signal_guard_sim.py` experiment, including false alarms,
+missed weak signals and authenticated false-content controls. It is not a deployed
+firewall or RF/biological detector. Run `python test_signal_guard.py` for boundary tests.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):
