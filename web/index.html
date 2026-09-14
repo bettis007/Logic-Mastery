@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Logic Mastery — Evidence Workbench</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><div class="brand"><span class="mark">∴</span><div><strong>Logic Mastery</strong><span class="sub">Evidence workbench</span></div></div><span class="mode">LOCAL PROTOTYPE</span></header>
+<main>
+<div class="intro"><div><p class="eyebrow">REVIEW / COMPARE / VERIFY</p><h1>Make the reasoning visible.</h1><p>Inspect classifier support and policy decisions without confusing one for the other.</p></div><button id="export" disabled>Export audit JSON ↓</button></div>
+<p id="status" role="status" aria-live="polite">Loading the local session…</p>
+<div class="workspace">
+<aside>
+<section class="panel"><div class="section-title"><span class="number">01</span><h2>Input evidence</h2></div><p class="muted">Numeric feature JSON, up to 1,000 examples. Raw document interpretation is not available.</p><div class="actions"><button id="demo" class="secondary">Load synthetic demo</button><label class="file-button">Import JSON<input id="features-file" type="file" accept=".json,application/json"></label></div><label for="features">Feature dataset</label><textarea id="features" spellcheck="false" placeholder='{"examples": [{"id": "case-1", "features": {…}}]}'></textarea><button id="run" class="primary" disabled>Run decision review</button><p class="micro">Data stays in this local process and browser memory. Export results before closing.</p></section>
+<section class="panel"><div class="section-title"><span class="number">02</span><h2>Reference labels</h2></div><p class="muted">Load labels separately after prediction. Provenance declarations are not independently authenticated.</p><label class="file-button">Import label JSON<input id="labels-file" type="file" accept=".json,application/json"></label><button id="demo-labels" class="text-button">Use synthetic demo labels</button><p id="label-name" class="micro">No labels loaded.</p><button id="evaluate" class="secondary" disabled>Evaluate current run</button></section>
+</aside>
+<div class="review">
+<div class="metrics"><div><span>Examples</span><strong id="count">—</strong></div><div><span>Policy overrides</span><strong id="overrides">—</strong></div><div><span>Final ACCEPT</span><strong id="accepted">—</strong></div></div>
+<section class="panel results"><div class="results-heading"><div><p class="eyebrow">DECISION LEDGER</p><h2>Review each outcome</h2></div><label for="filter">Show<select id="filter"><option value="all">All decisions</option><option value="override">Overrides only</option><option>ACCEPT</option><option>QUALIFY</option><option>SIMULATED</option><option>NARRATIVE</option><option>QUARANTINE</option></select></label></div><p class="muted">Classifier probabilities describe categories. Policy may deliberately choose a different outcome.</p><div class="table-wrap"><table><thead><tr><th>Example</th><th>Classifier → policy</th><th>Top probability</th><th>Final-label probability</th><th>Inspect</th></tr></thead><tbody id="rows"><tr><td colspan="5" class="empty">Load the demo or import evidence, then run a review.</td></tr></tbody></table></div><p id="timing" class="micro"></p></section>
+<section class="panel"><div class="section-title"><span class="number">03</span><h2>Compare a previous run</h2></div><label class="file-button">Import receipt or audit JSON<input id="prior-file" type="file" accept=".json,application/json"></label><p id="comparison" class="muted">Compare matching IDs to see changed decisions. Different datasets are reported separately.</p></section>
+<section class="panel"><div class="section-title"><span class="number">04</span><h2>Evaluation</h2></div><div id="evaluation" class="muted">No reference-label evaluation has been run. Demo scores measure synthetic fixture agreement only.</div></section>
+</div></div>
+<footer>Offline-first development · No deployment or model-weight changes · Reference probabilities are not proof of real-world truth.</footer>
+</main>
+<dialog id="detail"><button id="close-detail" class="secondary">Close</button><h2 id="detail-title">Decision detail</h2><pre id="detail-json"></pre></dialog>
+<script src="/app.js"></script></body></html>

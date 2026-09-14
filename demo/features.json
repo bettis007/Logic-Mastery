@@ -1,0 +1,290 @@
+{
+  "examples": [
+    {
+      "id": "C01",
+      "features": {
+        "source_authority": 0.62,
+        "direct_observation": 0.88,
+        "reproducibility": 0.66,
+        "independent_corroboration": 0.25,
+        "provenance_completeness": 0.92,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.1,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.25,
+        "numeric_specificity": 0.85,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.76,
+        "mechanism_defined": 0.45,
+        "metadata_integrity": 0.9,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C02",
+      "features": {
+        "source_authority": 0.42,
+        "direct_observation": 0.52,
+        "reproducibility": 0.28,
+        "independent_corroboration": 0.08,
+        "provenance_completeness": 0.48,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.98,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.82,
+        "numeric_specificity": 0.94,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.1,
+        "mechanism_defined": 0.1,
+        "metadata_integrity": 0.52,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C03",
+      "features": {
+        "source_authority": 0.64,
+        "direct_observation": 0.35,
+        "reproducibility": 0.83,
+        "independent_corroboration": 0.1,
+        "provenance_completeness": 0.96,
+        "explicit_simulation_label": 0.99,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.1,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.25,
+        "numeric_specificity": 0.1,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.91,
+        "mechanism_defined": 0.62,
+        "metadata_integrity": 0.94,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C04",
+      "features": {
+        "source_authority": 0.2,
+        "direct_observation": 0.02,
+        "reproducibility": 0.62,
+        "independent_corroboration": 0.01,
+        "provenance_completeness": 0.82,
+        "explicit_simulation_label": 0.98,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.1,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.48,
+        "numeric_specificity": 0.98,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.78,
+        "mechanism_defined": 0.1,
+        "metadata_integrity": 0.91,
+        "unsupported_existence_claim": 0.92
+      }
+    },
+    {
+      "id": "C05",
+      "features": {
+        "source_authority": 0.18,
+        "direct_observation": 0.02,
+        "reproducibility": 0.08,
+        "independent_corroboration": 0.01,
+        "provenance_completeness": 0.4,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.99,
+        "contradiction_score": 0.1,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.81,
+        "numeric_specificity": 0.62,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.1,
+        "mechanism_defined": 0.1,
+        "metadata_integrity": 0.61,
+        "unsupported_existence_claim": 0.94
+      }
+    },
+    {
+      "id": "C06",
+      "features": {
+        "source_authority": 0.52,
+        "direct_observation": 0.89,
+        "reproducibility": 0.78,
+        "independent_corroboration": 0.18,
+        "provenance_completeness": 0.91,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.34,
+        "contradiction_score": 0.1,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.25,
+        "numeric_specificity": 0.1,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.81,
+        "mechanism_defined": 0.51,
+        "metadata_integrity": 0.89,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C07",
+      "features": {
+        "source_authority": 0.18,
+        "direct_observation": 0.01,
+        "reproducibility": 0.06,
+        "independent_corroboration": 0.01,
+        "provenance_completeness": 0.36,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.48,
+        "contradiction_score": 0.52,
+        "hazard_score": 0.72,
+        "ambiguity_score": 0.8,
+        "numeric_specificity": 0.8,
+        "tamper_score": 0.1,
+        "authority_consent": 0.14,
+        "uncertainty_disclosed": 0.1,
+        "mechanism_defined": 0.1,
+        "metadata_integrity": 0.62,
+        "unsupported_existence_claim": 0.99
+      }
+    },
+    {
+      "id": "C08",
+      "features": {
+        "source_authority": 0.48,
+        "direct_observation": 0.82,
+        "reproducibility": 0.52,
+        "independent_corroboration": 0.12,
+        "provenance_completeness": 0.83,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.1,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.69,
+        "numeric_specificity": 0.99,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.88,
+        "mechanism_defined": 0.35,
+        "metadata_integrity": 0.86,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C09",
+      "features": {
+        "source_authority": 0.1,
+        "direct_observation": 0.01,
+        "reproducibility": 0.02,
+        "independent_corroboration": 0.01,
+        "provenance_completeness": 0.2,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.69,
+        "contradiction_score": 0.56,
+        "hazard_score": 0.9,
+        "ambiguity_score": 0.78,
+        "numeric_specificity": 0.1,
+        "tamper_score": 0.1,
+        "authority_consent": 0.02,
+        "uncertainty_disclosed": 0.1,
+        "mechanism_defined": 0.1,
+        "metadata_integrity": 0.43,
+        "unsupported_existence_claim": 0.98
+      }
+    },
+    {
+      "id": "C10",
+      "features": {
+        "source_authority": 0.38,
+        "direct_observation": 0.98,
+        "reproducibility": 0.99,
+        "independent_corroboration": 0.65,
+        "provenance_completeness": 0.87,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.96,
+        "hazard_score": 0.15,
+        "ambiguity_score": 0.14,
+        "numeric_specificity": 0.1,
+        "tamper_score": 0.1,
+        "authority_consent": 0.7,
+        "uncertainty_disclosed": 0.1,
+        "mechanism_defined": 0.08,
+        "metadata_integrity": 0.83,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C11",
+      "features": {
+        "source_authority": 0.37,
+        "direct_observation": 0.88,
+        "reproducibility": 0.6,
+        "independent_corroboration": 0.34,
+        "provenance_completeness": 0.74,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.72,
+        "hazard_score": 0.96,
+        "ambiguity_score": 0.54,
+        "numeric_specificity": 0.1,
+        "tamper_score": 0.1,
+        "authority_consent": 0.08,
+        "uncertainty_disclosed": 0.1,
+        "mechanism_defined": 0.5,
+        "metadata_integrity": 0.8,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C12",
+      "features": {
+        "source_authority": 0.88,
+        "direct_observation": 0.99,
+        "reproducibility": 0.99,
+        "independent_corroboration": 0.73,
+        "provenance_completeness": 0.98,
+        "explicit_simulation_label": 0.1,
+        "narrative_symbolism": 0.1,
+        "contradiction_score": 0.01,
+        "hazard_score": 0.03,
+        "ambiguity_score": 0.02,
+        "numeric_specificity": 0.42,
+        "tamper_score": 0.1,
+        "authority_consent": 0.93,
+        "uncertainty_disclosed": 0.9,
+        "mechanism_defined": 0.92,
+        "metadata_integrity": 0.99,
+        "unsupported_existence_claim": 0.1
+      }
+    },
+    {
+      "id": "C13",
+      "features": {
+        "source_authority": 0.42,
+        "direct_observation": 0.58,
+        "reproducibility": 0.42,
+        "independent_corroboration": 0.12,
+        "provenance_completeness": 0.78,
+        "explicit_simulation_label": 0.34,
+        "narrative_symbolism": 0.99,
+        "contradiction_score": 0.12,
+        "hazard_score": 0.12,
+        "ambiguity_score": 0.32,
+        "numeric_specificity": 0.52,
+        "tamper_score": 0.1,
+        "authority_consent": 0.72,
+        "uncertainty_disclosed": 0.74,
+        "mechanism_defined": 0.18,
+        "metadata_integrity": 0.82,
+        "unsupported_existence_claim": 0.08
+      }
+    }
+  ]
+}

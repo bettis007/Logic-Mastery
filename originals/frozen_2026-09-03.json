@@ -1,0 +1,379 @@
+{
+  "corpus_summary": {
+    "canonical_traces": [
+      {
+        "fixture_id": "C01",
+        "predicted": "QUALIFY",
+        "model_top_probability": 0.5048993564350807,
+        "final_label_model_probability": 0.49505581593883613
+      },
+      {
+        "fixture_id": "C02",
+        "predicted": "QUARANTINE",
+        "model_top_probability": 0.9852207525469722,
+        "final_label_model_probability": 0.01477888329535306
+      },
+      {
+        "fixture_id": "C03",
+        "predicted": "SIMULATED",
+        "model_top_probability": 0.9999992454788615,
+        "final_label_model_probability": 0.9999992454788615
+      },
+      {
+        "fixture_id": "C04",
+        "predicted": "QUARANTINE",
+        "model_top_probability": 0.9994857859214281,
+        "final_label_model_probability": 3.5742729206932777e-06
+      },
+      {
+        "fixture_id": "C05",
+        "predicted": "QUARANTINE",
+        "model_top_probability": 0.9999999852787771,
+        "final_label_model_probability": 1.2875975371273678e-08
+      },
+      {
+        "fixture_id": "C06",
+        "predicted": "QUALIFY",
+        "model_top_probability": 0.9561599068190471,
+        "final_label_model_probability": 0.043208388336313255
+      },
+      {
+        "fixture_id": "C07",
+        "predicted": "QUARANTINE",
+        "model_top_probability": 0.9978961984060866,
+        "final_label_model_probability": 0.9978961984060866
+      },
+      {
+        "fixture_id": "C08",
+        "predicted": "QUALIFY",
+        "model_top_probability": 0.9999965319695612,
+        "final_label_model_probability": 0.9999965319695612
+      },
+      {
+        "fixture_id": "C09",
+        "predicted": "QUARANTINE",
+        "model_top_probability": 0.9790449287558963,
+        "final_label_model_probability": 0.9790449287558963
+      },
+      {
+        "fixture_id": "C10",
+        "predicted": "QUARANTINE",
+        "model_top_probability": 0.8364028507030369,
+        "final_label_model_probability": 1.0556031115293293e-05
+      },
+      {
+        "fixture_id": "C11",
+        "predicted": "QUARANTINE",
+        "model_top_probability": 0.7262907563706555,
+        "final_label_model_probability": 0.27370913216990317
+      },
+      {
+        "fixture_id": "C12",
+        "predicted": "ACCEPT",
+        "model_top_probability": 0.9999999998170792,
+        "final_label_model_probability": 0.9999999998170792
+      },
+      {
+        "fixture_id": "C13",
+        "predicted": "NARRATIVE",
+        "model_top_probability": 0.9987162537737373,
+        "final_label_model_probability": 0.9987162537737373
+      }
+    ]
+  },
+  "aggregate": {
+    "baseline": {
+      "accept_recall": {
+        "ci95_high": 0.9940233335674102,
+        "ci95_low": 0.985952687249857,
+        "max": 0.9943977591036415,
+        "mean": 0.9892112751748358,
+        "min": 0.9858490566037735
+      },
+      "accuracy": {
+        "ci95_high": 0.9129791666666667,
+        "ci95_low": 0.9063402777777778,
+        "max": 0.9130555555555555,
+        "mean": 0.9101157407407406,
+        "min": 0.9061111111111111
+      },
+      "ambiguous_acceptance_rate": {
+        "ci95_high": 0.02433035714285714,
+        "ci95_low": 0.0,
+        "max": 0.026785714285714284,
+        "mean": 0.008928571428571426,
+        "min": 0.0
+      },
+      "blocked_acceptance_rate": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "clean_decidable_coverage": {
+        "ci95_high": 0.9987257417533166,
+        "ci95_low": 0.9961002006501259,
+        "max": 0.9989224137931034,
+        "mean": 0.9975377014379309,
+        "min": 0.9959868661072602
+      },
+      "contradiction_detection_recall": {
+        "ci95_high": 1.0,
+        "ci95_low": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "decoy_acceptance_rate": {
+        "ci95_high": 0.14441964285714284,
+        "ci95_low": 0.044642857142857144,
+        "max": 0.15178571428571427,
+        "mean": 0.09300595238095238,
+        "min": 0.044642857142857144
+      },
+      "ece_15_bin": {
+        "ci95_high": 0.3651371402400226,
+        "ci95_low": 0.3545089546811838,
+        "max": 0.36600887772698604,
+        "mean": 0.35868517538135886,
+        "min": 0.3542734088225205
+      },
+      "false_factual_promotion_rate": {
+        "ci95_high": 0.05286805555555556,
+        "ci95_low": 0.042833333333333334,
+        "max": 0.05416666666666667,
+        "mean": 0.047615740740740736,
+        "min": 0.042222222222222223
+      },
+      "macro_f1": {
+        "ci95_high": 0.9164863349912218,
+        "ci95_low": 0.909316449300141,
+        "max": 0.9167362165266761,
+        "mean": 0.9126401984610878,
+        "min": 0.909204690824058
+      },
+      "multiclass_brier": {
+        "ci95_high": 0.3331875415455316,
+        "ci95_low": 0.32451318544152025,
+        "max": 0.33448658522012276,
+        "mean": 0.3278727084132855,
+        "min": 0.3239247224018439
+      },
+      "narrative_to_fact_violation_rate": {
+        "ci95_high": 0.0013254113345521016,
+        "ci95_low": 0.0,
+        "max": 0.0018281535648994515,
+        "mean": 0.00015234613040828764,
+        "min": 0.0
+      },
+      "normalized_multiclass_brier": {
+        "ci95_high": 0.1665937707727658,
+        "ci95_low": 0.16225659272076012,
+        "max": 0.16724329261006138,
+        "mean": 0.16393635420664274,
+        "min": 0.16196236120092194
+      },
+      "quarantine_precision": {
+        "ci95_high": 0.9956851770666604,
+        "ci95_low": 0.9875240673886884,
+        "max": 0.996328029375765,
+        "mean": 0.9917733459587893,
+        "min": 0.9873563218390805
+      },
+      "quarantine_recall": {
+        "ci95_high": 1.0,
+        "ci95_low": 0.9975547524599148,
+        "max": 1.0,
+        "mean": 0.9991804023945283,
+        "min": 0.9975490196078431
+      },
+      "simulation_exact_label_retention": {
+        "ci95_high": 0.8023090752680881,
+        "ci95_low": 0.7754455766285782,
+        "max": 0.8052708638360175,
+        "mean": 0.7846361338661122,
+        "min": 0.774885145482389
+      },
+      "simulation_to_fact_violation_rate": {
+        "ci95_high": 0.06542185592185593,
+        "ci95_low": 0.04359678571428571,
+        "max": 0.06615384615384616,
+        "mean": 0.05503547074816569,
+        "min": 0.0432
+      },
+      "stress_slice_accuracy": {
+        "ci95_high": 0.8419084821428572,
+        "ci95_low": 0.8183872767857142,
+        "max": 0.84375,
+        "mean": 0.8303571428571429,
+        "min": 0.8180803571428571
+      },
+      "tamper_detection_recall": {
+        "ci95_high": 1.0,
+        "ci95_low": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "usable_coverage": {
+        "ci95_high": 0.7801458333333333,
+        "ci95_low": 0.7585625,
+        "max": 0.7808333333333334,
+        "mean": 0.7697453703703704,
+        "min": 0.7583333333333333
+      }
+    },
+    "delta": {
+      "accuracy": 0.053472222222222365,
+      "clean_decidable_coverage": -0.013977412798970468,
+      "false_factual_promotion_rate": -0.0474537037037037,
+      "macro_f1": 0.05120498105512783,
+      "normalized_multiclass_brier": -0.16286438260954453,
+      "stress_slice_accuracy": 0.1462053571428571
+    },
+    "mastered": {
+      "accept_recall": {
+        "ci95_high": 0.8972451428433257,
+        "ci95_low": 0.8601301758759174,
+        "max": 0.8982808022922636,
+        "mean": 0.8801169071524871,
+        "min": 0.8599397590361446
+      },
+      "accuracy": {
+        "ci95_high": 0.9679027777777778,
+        "ci95_low": 0.9587708333333332,
+        "max": 0.9680555555555556,
+        "mean": 0.963587962962963,
+        "min": 0.9577777777777777
+      },
+      "ambiguous_acceptance_rate": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "blocked_acceptance_rate": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "clean_decidable_coverage": {
+        "ci95_high": 0.9875533739421795,
+        "ci95_low": 0.9782020154704028,
+        "max": 0.9877565718401152,
+        "mean": 0.9835602886389604,
+        "min": 0.977411258515597
+      },
+      "contradiction_detection_recall": {
+        "ci95_high": 1.0,
+        "ci95_low": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "decoy_acceptance_rate": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "ece_15_bin": {
+        "ci95_high": 0.002426007033249062,
+        "ci95_low": 0.0012772049492408718,
+        "max": 0.002447199369326005,
+        "mean": 0.00190287077844992,
+        "min": 0.001246263165863517
+      },
+      "false_factual_promotion_rate": {
+        "ci95_high": 0.0005555555555555556,
+        "ci95_low": 0.0,
+        "max": 0.0005555555555555556,
+        "mean": 0.00016203703703703703,
+        "min": 0.0
+      },
+      "macro_f1": {
+        "ci95_high": 0.9681379399707648,
+        "ci95_low": 0.9590432549488132,
+        "max": 0.9682514465024064,
+        "mean": 0.9638451795162156,
+        "min": 0.9580937604818202
+      },
+      "multiclass_brier": {
+        "ci95_high": 0.003603602344255308,
+        "ci95_low": 0.0012464245587116242,
+        "max": 0.0036946897584343554,
+        "mean": 0.002143943194196442,
+        "min": 0.0011340071192438704
+      },
+      "narrative_to_fact_violation_rate": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "normalized_multiclass_brier": {
+        "ci95_high": 0.001801801172127654,
+        "ci95_low": 0.0006232122793558121,
+        "max": 0.0018473448792171777,
+        "mean": 0.001071971597098221,
+        "min": 0.0005670035596219352
+      },
+      "quarantine_precision": {
+        "ci95_high": 0.9597652621516487,
+        "ci95_low": 0.9302547254665943,
+        "max": 0.9603267211201867,
+        "mean": 0.947405858562846,
+        "min": 0.9279176201372997
+      },
+      "quarantine_recall": {
+        "ci95_high": 1.0,
+        "ci95_low": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "simulation_exact_label_retention": {
+        "ci95_high": 1.0,
+        "ci95_low": 0.9951791368936148,
+        "max": 1.0,
+        "mean": 0.9976705124595555,
+        "min": 0.9950166112956811
+      },
+      "simulation_to_fact_violation_rate": {
+        "ci95_high": 0.0,
+        "ci95_low": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      },
+      "stress_slice_accuracy": {
+        "ci95_high": 0.9821428571428571,
+        "ci95_low": 0.9701729910714285,
+        "max": 0.9821428571428571,
+        "mean": 0.9765625,
+        "min": 0.9698660714285714
+      },
+      "tamper_detection_recall": {
+        "ci95_high": 1.0,
+        "ci95_low": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      },
+      "usable_coverage": {
+        "ci95_high": 0.7687569444444444,
+        "ci95_low": 0.7478541666666667,
+        "max": 0.7694444444444445,
+        "mean": 0.7587731481481481,
+        "min": 0.7477777777777778
+      }
+    }
+  },
+  "scope": "Numeric synthetic reference only; documentary claims omitted."
+}

@@ -1,76 +1,124 @@
 # Logic Mastery
 
-Offline-first evidence workbench for claim triage, explicit confidence reporting, deterministic replay, and reproducible validation.
+Offline-first evidence workbench for claim triage, explicit confidence reporting,
+deterministic replay, and reproducible validation.
 
-## Project status
+**Research prototype · Local development · Synthetic reference data**
 
-Research prototype under development. This repository currently documents the design and validation status; the tested application files have **not yet been uploaded**. The development workspace disconnected before publication. There is no hosted application or runnable installation in this repository yet.
+Logic Mastery makes a classifier's output and the final policy decision visible
+side by side. It helps a reviewer inspect overrides, compare receipts and score
+separately supplied labels. It does not establish real-world truth, interpret
+raw documents, or change hidden model weights.
 
-Development follows a simulation-first workflow: implement bounded behavior, test it against explicit expectations, preserve evidence, and refine the design before cloud deployment.
+## Start the workbench
 
-## Application design
+Use Python 3.12. Install dependencies into a virtual environment:
 
-The local prototype includes:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python server.py
+```
 
-- Numeric evidence input, synthetic demo cases, and input validation.
-- A decision ledger with filtering and per-case inspection.
-- Separate reference-label import and evaluation.
-- Comparison with previous prediction receipts and JSON audit export.
-- A Python loopback HTTP server with session-token and origin checks.
-- In-memory model reuse to avoid rebuilding the same reference model on every request.
+Open **http://127.0.0.1:8765** on the same machine. The server binds only to
+loopback and is a development prototype, not a production web server.
 
-Inputs are numeric features, not an automatic document-understanding or fact-verification system. A policy acceptance means that the encoded evidence meets the simulator's rules; it does not establish external truth.
+1. Load the synthetic demo or import feature JSON.
+2. Run the review and inspect classifier-to-policy changes.
+3. Import a previous receipt to compare matching IDs.
+4. Load reference labels separately, evaluate, and export the audit JSON.
 
-## Confidence and evidence boundaries
+The browser keeps the current run in memory; closing or reloading loses it
+unless exported. The server does not save uploaded datasets. The first
+prediction initializes the canonical model; subsequent requests reuse it.
+The interface accepts up to 1,000 examples and a 2 MB request body.
 
-The interface distinguishes the classifier's most probable label from the final policy label.
+## What the probabilities mean
 
 | Field | Meaning |
 |---|---|
-| Classifier top-label probability | Model probability for its preferred label |
-| Final-label model probability | Model probability for the label ultimately selected by policy |
-| Policy override | Whether policy changed the classifier's preferred label |
-| Post-policy correctness probability | Unknown; no independently calibrated value is claimed |
+| `classifier_top_label` | Classifier's most likely category |
+| `classifier_top_label_probability` | Probability assigned to that category |
+| `final_policy_label` | Category selected after the policy gates |
+| `classifier_probability_for_final_label` | Classifier support for the final category |
+| `policy_override` | Whether the policy changed the top label |
+| `post_policy_correctness_probability` | Null: no such correctness model is fitted |
 
-Simulated, narrative, conceptual, and unverified claims must retain their evidence category. Synthetic test success does not promote them to real-world facts. No hidden model-weight changes are claimed.
+A high probability for ACCEPT is not a high probability for QUALIFY after a
+policy override. A deliberate quarantine is not automatically a classifier
+error or proof that the underlying claim is false.
 
-## Development validation recorded on September 14, 2026
+## Command-line interface
 
-These are local development measurements. Their source files and raw receipts remain pending upload, so they are not yet reproducible from this repository.
+```bash
+python claim_app.py demo/features.json results/predictions.json
+python evaluate_labels.py results/predictions.json demo/labels.json results/evaluation.json
+```
 
-| Check | Observed result |
-|---|---:|
-| Integration checks | 9 passed |
-| Synthetic policy-contract checks | 92 passed |
-| Local HTTP checks | 10 passed |
-| JavaScript syntax and Python compilation | Passed |
-| Model-cache comparison | Identical prediction records for tested batches |
-| Browser visual and interaction review | Incomplete: local preview access blocked |
-| Independent external labeled evaluation | Incomplete: no suitable independent labels supplied |
+Use new output filenames for each run; these commands refuse overwrites.
+Prediction accepts only example IDs and all 17 numeric features, in the named
+schema demonstrated by `demo/features.json`. Labels never enter prediction.
+This is feature-based inference, not an automatic text-to-evidence system.
 
-The policy cases are authored synthetic contracts, not a blind external benchmark.
+## Verification
 
-For a 1,000-case batch, median local prediction time was approximately **154.15 ms with model rebuilding versus 7.14 ms with a warm cached model** (about 21.6 times faster). This measures avoided model construction on the development host. It is not a cloud-latency, hardware-acceleration, or general intelligence result.
+```bash
+python test_integration.py
+python test_policy_contracts.py
+python test_server.py
+python benchmark_app.py
+```
 
-## Publication and release gates
+Measured in the development environment:
 
-1. Reconnect the development workspace and publish the reviewed public-safe source, tests, and reproducibility instructions.
-2. Complete browser visual, interaction, and accessibility checks.
-3. Evaluate against independently labeled examples with documented provenance and category definitions.
-4. Preserve deterministic replay and distinguish classifier calibration from final-policy calibration.
-5. Define production identity, storage, retention, and deployment requirements.
-6. Select and validate a Google Cloud deployment after the application design stabilizes.
+- 9 integration checks passed; all 13 canonical synthetic records reproduced.
+- 92 separately authored synthetic policy-contract cases passed.
+- 10 local HTTP-boundary checks passed.
+- Cached and rebuilt requests produced exactly equal records for benchmark
+  batches of 13, 100 and 1,000 examples.
+- For 1,000 examples, median request computation fell from **154.15 ms to
+  7.14 ms**, about **21.6×**, by avoiding model rebuilding on each request.
 
-Private source documents, recovered attachments, credentials, and private working history are excluded from the public release. The public numerical reference is intended to omit documentary narratives; this changes its source bytes and requires explicit provenance documentation.
+This is a warm-process optimization relative to an inefficient rebuild-per-call
+baseline. It is not a faster classification algorithm, an HTTP round-trip
+benchmark or a Google Cloud performance result. See docs/PERFORMANCE.md.
+
+The browser in the development environment could not access the loopback URL.
+HTTP behavior and JavaScript syntax were checked; visual browser QA and a full
+interactive browser walkthrough remain unverified.
+
+## Validation limits
+
+The shipped labels are synthetic, not independently annotated external data.
+Policy-contract testing checks known requirements, not the scientific validity
+of those requirements. No external-validation score is claimed.
+
+The public numerical reference omits private documentary fixtures and source
+manifests. Numeric baseline comparisons do not certify the private corpus.
+See docs/REFERENCE_PROVENANCE.md and docs/EXTERNAL_VALIDATION.md.
+
+## Simulation-first roadmap
+
+1. Review the local import → inspect → compare → export workflow.
+2. Complete visual/user QA and measure representative batch/memory workloads.
+3. Evaluate an independently labeled, source-separated dataset.
+4. Define identity, storage, access, retention and restart/retry requirements.
+5. Deploy private staging in Google Cloud only after those design gates pass.
+
+GitHub versions the design and implementation now. Cloud resources and costs
+are not configured by this repository. No production authentication, persistent
+multi-user storage, natural-language extraction or cloud deployment is claimed.
+See docs/ARCHITECTURE.md for the implemented and planned boundaries.
 
 ## Repository description
 
-Suggested GitHub About text:
+Suggested GitHub About text (also in `.github/description.txt`):
 
 > Offline-first evidence workbench for claim triage, explicit confidence reporting, deterministic replay, and reproducible validation.
 
-This README does not change GitHub's About metadata.
+The About metadata must be set separately; a file does not update that field.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT, preserving the repository owner's existing LICENSE.

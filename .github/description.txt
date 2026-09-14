@@ -1,0 +1,1 @@
+Offline-first evidence workbench for claim triage, explicit confidence reporting, deterministic replay, and reproducible validation.

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+project_sources/
+private_data/
+results/*
+!results/.gitkeep
+*.sqlite
+*.sqlite-*
+*.npz
+*.zip
+credentials*.json
+service-account*.json

@@ -1,0 +1,75 @@
+{
+  "provenance": {
+    "dataset_kind": "synthetic_embedded_demo",
+    "annotation_author": "Original simulator fixture author",
+    "annotation_protocol": "Hand-authored synthetic category fixtures; not independent external labels",
+    "label_target": "epistemic_category"
+  },
+  "labels": [
+    {
+      "id": "C01",
+      "expected": "QUALIFY",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C02",
+      "expected": "QUARANTINE",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C03",
+      "expected": "SIMULATED",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C04",
+      "expected": "QUARANTINE",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C05",
+      "expected": "QUARANTINE",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C06",
+      "expected": "QUALIFY",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C07",
+      "expected": "QUARANTINE",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C08",
+      "expected": "QUALIFY",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C09",
+      "expected": "QUARANTINE",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C10",
+      "expected": "QUARANTINE",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C11",
+      "expected": "QUARANTINE",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C12",
+      "expected": "ACCEPT",
+      "source_family": "synthetic_reference"
+    },
+    {
+      "id": "C13",
+      "expected": "NARRATIVE",
+      "source_family": "synthetic_reference"
+    }
+  ]
+}
