@@ -103,6 +103,10 @@ The public numerical reference omits private documentary fixtures and source
 manifests. Numeric baseline comparisons do not certify the private corpus.
 See docs/REFERENCE_PROVENANCE.md and docs/EXTERNAL_VALIDATION.md.
 
+See [browser review](docs/BROWSER_REVIEW.md) for accessibility changes and
+remaining live checks, and [annotation protocol](docs/ANNOTATION_PROTOCOL.md)
+for the proposed independent evaluation process and dataset compatibility review.
+
 ## Simulation-first roadmap
 
 1. Review the local import → inspect → compare → export workflow.
