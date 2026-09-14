@@ -135,6 +135,13 @@ document the standalone `signal_guard_sim.py` experiment, including false alarms
 missed weak signals and authenticated false-content controls. It is not a deployed
 firewall or RF/biological detector. Run `python test_signal_guard.py` for boundary tests.
 
+## Restart and signal refinement study
+
+[Restart/refinement report](docs/RESTART_REFINEMENT_REPORT.md) records 11 passing
+SQLite restart/concurrency checks and a frozen 28,000-example signal comparison.
+The experimental detector fails the expanded false-alarm gate and is not enabled
+in the original guard. `durable_guard.py` is a standalone persistence prototype.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):

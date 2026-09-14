@@ -1,0 +1,13 @@
+{
+  "after_commit_recovery": true,
+  "altered_binding_refused": true,
+  "before_commit_recovery": true,
+  "clock_rollback_rejected": true,
+  "concurrent_duplicate_serialized": true,
+  "corrupt_ledger_refused": true,
+  "existing_ledger_reset_refused": true,
+  "missing_ledger_refused": true,
+  "quota_expires": true,
+  "restart_quota_preserved": true,
+  "restart_replay_rejected": true
+}

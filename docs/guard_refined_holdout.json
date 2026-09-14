@@ -1,0 +1,143 @@
+{
+  "configuration_sha256": "bbed6893d76b3e82978fa18b9cde0807ae72322d0c57c0dae083507cf9ca79d0",
+  "decision_trace_sha256": "5457b01fe728c286cd24e828acb1af02df408efb9b950d5d289f27a2c51f4d19",
+  "limitations": [
+    "Same generator family with different seeds, not independent external validation",
+    "Legitimate periodic changes and weak injected tones deliberately overlap in distribution",
+    "No RF sensing or physical frequency attribution",
+    "No test-label tuning; failed gates are reported"
+  ],
+  "n_per_variant": 28000,
+  "scope": "Synthetic heldout waveform review only; not external data or message authentication",
+  "test_seed": 910301,
+  "variants": {
+    "baseline": {
+      "accuracy": 0.7007142857142857,
+      "benign_false_alarm_rate": 0.0435,
+      "confusion": {
+        "fn": 7858,
+        "fp": 522,
+        "tn": 11478,
+        "tp": 8142
+      },
+      "gates": {
+        "core_clean_false_alarm": true,
+        "core_stress_false_alarm": false,
+        "expanded_periodic_false_alarm": false,
+        "strong_recall": true,
+        "weak_recall": false
+      },
+      "overall_gate_pass": false,
+      "precision": 0.9397506925207756,
+      "recall": 0.508875,
+      "slices": {
+        "clean": {
+          "flag_rate": 0.0,
+          "flagged": 0,
+          "n": 4000,
+          "target": "benign"
+        },
+        "dc_shift": {
+          "flag_rate": 1.0,
+          "flagged": 4000,
+          "n": 4000,
+          "target": "injected_anomaly"
+        },
+        "legitimate_periodic_change": {
+          "flag_rate": 0.0335,
+          "flagged": 134,
+          "n": 4000,
+          "target": "benign"
+        },
+        "legitimate_stress": {
+          "flag_rate": 0.097,
+          "flagged": 388,
+          "n": 4000,
+          "target": "benign"
+        },
+        "off_bin_weak": {
+          "flag_rate": 0.0,
+          "flagged": 0,
+          "n": 4000,
+          "target": "injected_anomaly"
+        },
+        "strong_tone": {
+          "flag_rate": 1.0,
+          "flagged": 4000,
+          "n": 4000,
+          "target": "injected_anomaly"
+        },
+        "weak_tone": {
+          "flag_rate": 0.0355,
+          "flagged": 142,
+          "n": 4000,
+          "target": "injected_anomaly"
+        }
+      }
+    },
+    "refined": {
+      "accuracy": 0.7132857142857143,
+      "benign_false_alarm_rate": 0.21175,
+      "confusion": {
+        "fn": 5487,
+        "fp": 2541,
+        "tn": 9459,
+        "tp": 10513
+      },
+      "gates": {
+        "core_clean_false_alarm": true,
+        "core_stress_false_alarm": true,
+        "expanded_periodic_false_alarm": false,
+        "strong_recall": true,
+        "weak_recall": true
+      },
+      "overall_gate_pass": false,
+      "precision": 0.8053470200704764,
+      "recall": 0.6570625,
+      "slices": {
+        "clean": {
+          "flag_rate": 0.00825,
+          "flagged": 33,
+          "n": 4000,
+          "target": "benign"
+        },
+        "dc_shift": {
+          "flag_rate": 1.0,
+          "flagged": 4000,
+          "n": 4000,
+          "target": "injected_anomaly"
+        },
+        "legitimate_periodic_change": {
+          "flag_rate": 0.627,
+          "flagged": 2508,
+          "n": 4000,
+          "target": "benign"
+        },
+        "legitimate_stress": {
+          "flag_rate": 0.0,
+          "flagged": 0,
+          "n": 4000,
+          "target": "benign"
+        },
+        "off_bin_weak": {
+          "flag_rate": 0.0095,
+          "flagged": 38,
+          "n": 4000,
+          "target": "injected_anomaly"
+        },
+        "strong_tone": {
+          "flag_rate": 1.0,
+          "flagged": 4000,
+          "n": 4000,
+          "target": "injected_anomaly"
+        },
+        "weak_tone": {
+          "flag_rate": 0.61875,
+          "flagged": 2475,
+          "n": 4000,
+          "target": "injected_anomaly"
+        }
+      }
+    }
+  }
+}

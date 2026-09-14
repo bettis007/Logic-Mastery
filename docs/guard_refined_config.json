@@ -1,0 +1,24 @@
+{
+  "development_n_per_slice": 2000,
+  "development_rates": {
+    "clean": 0.008,
+    "legitimate_stress": 0.0005,
+    "strong_tone": 1.0,
+    "weak_tone": 0.6445
+  },
+  "development_seed": 610201,
+  "mean_limit": 0.5,
+  "rms_rule_removed": true,
+  "scope": "Synthetic development-selected spectral/mean review rule; no automatic blocking",
+  "selection": "Maximum weak-tone recall subject to <=1% false alarms in each clean/stress development slice; ties choose higher threshold. Test seed unused until configuration is written.",
+  "spectral_threshold": 0.485,
+  "test_plan": {
+    "baseline_spectral_threshold": 0.6,
+    "core_benign_false_alarm_max": 0.01,
+    "expanded_benign_false_alarm_max": 0.01,
+    "n_per_slice": 4000,
+    "seed": 910301,
+    "strong_recall_min": 0.99,
+    "weak_recall_min": 0.5
+  }
+}
