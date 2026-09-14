@@ -1,0 +1,111 @@
+{
+  "configuration_sha256": "a97baebf43c986bbe2a0a345e845d4fa3f336018c735899b72a6e99634523d55",
+  "decision_trace_sha256": "aa2f4d936839ad9f47c40ea2ea6560ce382dbd37b742c3e44d60693b9ff1ab42",
+  "gates": {
+    "clean_false_alarm": true,
+    "forged_context_review": true,
+    "legitimate_periodic_change_false_alarm": true,
+    "legitimate_stress_false_alarm": true,
+    "missing_context_review": true,
+    "signed_wrong_context_recall": false,
+    "strong_recall": true,
+    "weak_recall": false
+  },
+  "n": 40000,
+  "note": "Missing/invalid context routes to review, not a finding of attack. Signed-wrong context is deliberately indistinguishable from authorized change given these inputs.",
+  "overall_pass": false,
+  "scope": "Frozen synthetic context study; no RF measurements or external context authentication",
+  "slices": {
+    "clean": {
+      "context_review_rate": 0.003,
+      "context_reviewed": 12,
+      "n": 4000,
+      "target": "benign",
+      "unusable_context": 0,
+      "without_context_flagged": 47,
+      "without_context_rate": 0.01175
+    },
+    "dc_shift": {
+      "context_review_rate": 1.0,
+      "context_reviewed": 4000,
+      "n": 4000,
+      "target": "review",
+      "unusable_context": 0,
+      "without_context_flagged": 4000,
+      "without_context_rate": 1.0
+    },
+    "forged_context": {
+      "context_review_rate": 1.0,
+      "context_reviewed": 4000,
+      "n": 4000,
+      "target": "review",
+      "unusable_context": 4000,
+      "without_context_flagged": 2495,
+      "without_context_rate": 0.62375
+    },
+    "legitimate_periodic_change": {
+      "context_review_rate": 0.003,
+      "context_reviewed": 12,
+      "n": 4000,
+      "target": "benign",
+      "unusable_context": 0,
+      "without_context_flagged": 2459,
+      "without_context_rate": 0.61475
+    },
+    "legitimate_stress": {
+      "context_review_rate": 0.0015,
+      "context_reviewed": 6,
+      "n": 4000,
+      "target": "benign",
+      "unusable_context": 0,
+      "without_context_flagged": 0,
+      "without_context_rate": 0.0
+    },
+    "missing_context": {
+      "context_review_rate": 1.0,
+      "context_reviewed": 4000,
+      "n": 4000,
+      "target": "review",
+      "unusable_context": 4000,
+      "without_context_flagged": 2450,
+      "without_context_rate": 0.6125
+    },
+    "off_bin_weak": {
+      "context_review_rate": 0.00225,
+      "context_reviewed": 9,
+      "n": 4000,
+      "target": "review",
+      "unusable_context": 0,
+      "without_context_flagged": 37,
+      "without_context_rate": 0.00925
+    },
+    "signed_wrong_context": {
+      "context_review_rate": 0.0025,
+      "context_reviewed": 10,
+      "n": 4000,
+      "target": "review",
+      "unusable_context": 0,
+      "without_context_flagged": 2511,
+      "without_context_rate": 0.62775
+    },
+    "strong_tone": {
+      "context_review_rate": 1.0,
+      "context_reviewed": 4000,
+      "n": 4000,
+      "target": "review",
+      "unusable_context": 0,
+      "without_context_flagged": 4000,
+      "without_context_rate": 1.0
+    },
+    "weak_tone": {
+      "context_review_rate": 0.49875,
+      "context_reviewed": 1995,
+      "n": 4000,
+      "target": "review",
+      "unusable_context": 0,
+      "without_context_flagged": 2483,
+      "without_context_rate": 0.62075
+    }
+  },
+  "test_seed": 830129
+}

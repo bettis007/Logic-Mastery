@@ -1,0 +1,21 @@
+{
+  "assumptions": [
+    "Expected phase/bin and noise scale supplied before observation",
+    "Context signer uses public simulation key",
+    "Valid context can still be wrong"
+  ],
+  "development_n": 9000,
+  "development_seed": 730127,
+  "scope": "Synthetic rule development, not independent context verification",
+  "selection": "Maximum per-benign-slice 99.5th percentile of normalized known-phase amplitude/mean residual; no adverse examples used for tuning",
+  "test_plan": {
+    "benign_false_alarm_max": 0.01,
+    "forged_or_missing_context_review_min": 1.0,
+    "n_per_slice": 4000,
+    "seed": 830129,
+    "signed_wrong_context_recall_min": 0.5,
+    "strong_recall_min": 0.99,
+    "weak_recall_min": 0.5
+  },
+  "threshold": 3.1766241653501774
+}

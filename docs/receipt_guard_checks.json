@@ -1,0 +1,14 @@
+{
+  "after_commit_atomic_recovery": true,
+  "altered_receipt_rejected": true,
+  "altered_state_rejected": true,
+  "before_commit_atomic_recovery": true,
+  "concurrent_duplicate_same_receipt": true,
+  "duplicate_does_not_add_receipt": true,
+  "duplicate_returns_original_receipt": true,
+  "invalid_message_cannot_recover_receipt": true,
+  "rate_rejection_receipt_is_stable": true,
+  "restart_recovers_receipt": true,
+  "sequence_payload_conflict_rejected": true,
+  "wrong_receipt_key_rejected": true
+}

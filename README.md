@@ -142,6 +142,13 @@ SQLite restart/concurrency checks and a frozen 28,000-example signal comparison.
 The experimental detector fails the expanded false-alarm gate and is not enabled
 in the original guard. `durable_guard.py` is a standalone persistence prototype.
 
+## Receipt recovery and context study
+
+[Recovery/context report](docs/RECEIPT_CONTEXT_REPORT.md) documents 12 passing
+authenticated-receipt tests and a 40,000-example frozen synthetic comparison.
+Correct context reduced periodic-change false alarms, but weak recall and
+signed-wrong-context gates failed. Both prototypes remain separate from the app.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):
