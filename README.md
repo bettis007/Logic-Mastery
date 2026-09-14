@@ -67,6 +67,8 @@ This is feature-based inference, not an automatic text-to-evidence system.
 python test_integration.py
 python test_policy_contracts.py
 python test_server.py
+python test_refinements.py
+node test_ui_state.cjs  # Optional Node.js state-coordination check
 python benchmark_app.py
 ```
 
@@ -75,6 +77,9 @@ Measured in the development environment:
 - 9 integration checks passed; all 13 canonical synthetic records reproduced.
 - 92 separately authored synthetic policy-contract cases passed.
 - 10 local HTTP-boundary checks passed.
+- 10 malformed probability inputs were rejected; numeric endpoints remained valid.
+- A Node.js DOM-stub test verifies action locking and recovery after errors.
+  This is not a browser visual or interaction review.
 - Cached and rebuilt requests produced exactly equal records for benchmark
   batches of 13, 100 and 1,000 examples.
 - For 1,000 examples, median request computation fell from **154.15 ms to

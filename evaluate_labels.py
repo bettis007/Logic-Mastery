@@ -26,7 +26,10 @@ def score(predictions, labels):
         row=y[i]
         if row['expected'] not in LABELS or p[i]['final_policy_label'] not in LABELS:raise ValueError('Unknown category.')
         if not isinstance(row.get('source_family'),str) or not row['source_family']:raise ValueError('Missing source family.')
-        truth.append(row['expected']);pred.append(p[i]['final_policy_label']);conf.append(p[i]['classifier_probability_for_final_label'])
+        probability=p[i]['classifier_probability_for_final_label']
+        if isinstance(probability,bool) or not isinstance(probability,(int,float)):
+            raise ValueError('Probabilities must be JSON numbers, not strings or booleans.')
+        truth.append(row['expected']);pred.append(p[i]['final_policy_label']);conf.append(probability)
         families.setdefault(row['source_family'],[]).append(len(truth)-1)
     truth=np.asarray(truth);pred=np.asarray(pred);conf=np.asarray(conf,dtype=float)
     if not np.all(np.isfinite(conf)) or np.any((conf<0)|(conf>1)):raise ValueError('Invalid probabilities.')
