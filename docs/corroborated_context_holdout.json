@@ -1,0 +1,114 @@
+{
+  "config_sha256": "d3fd6a406d31d733cbaf79a716271d1030da77e7d6f4eeed3d56784f1729d924",
+  "gates": {
+    "bad_signature_review": true,
+    "both_wrong_recall": false,
+    "clean_false_alarm": true,
+    "missing_registry_review": true,
+    "off_bin_recall": false,
+    "periodic_false_alarm": true,
+    "producer_wrong_review": true,
+    "stale_registry_review": true,
+    "stress_false_alarm": true,
+    "strong_recall": true,
+    "weak_recall": true,
+    "wrong_example_binding_review": true
+  },
+  "limitations": [
+    "Both agreeing sources can be wrong",
+    "Fixture keys are public; no real sender or witness authentication",
+    "Residual spectral check omits Nyquist; no physical sampling model",
+    "Missing context review is not attack attribution"
+  ],
+  "n": 48000,
+  "overall_pass": false,
+  "scope": "Synthetic two-source agreement and residual-spectrum experiment, not independently verified context",
+  "seed": 2026091502,
+  "slices": {
+    "bad_signature": {
+      "broad_review_rate": 1.0,
+      "broad_reviewed": 4000,
+      "context_failures": 4000,
+      "n": 4000,
+      "narrow_review_rate": 1.0
+    },
+    "both_wrong": {
+      "broad_review_rate": 0.0075,
+      "broad_reviewed": 30,
+      "context_failures": 0,
+      "n": 4000,
+      "narrow_review_rate": 0.00325
+    },
+    "clean": {
+      "broad_review_rate": 0.006,
+      "broad_reviewed": 24,
+      "context_failures": 0,
+      "n": 4000,
+      "narrow_review_rate": 0.00275
+    },
+    "missing_registry": {
+      "broad_review_rate": 1.0,
+      "broad_reviewed": 4000,
+      "context_failures": 4000,
+      "n": 4000,
+      "narrow_review_rate": 1.0
+    },
+    "off_bin": {
+      "broad_review_rate": 0.0275,
+      "broad_reviewed": 110,
+      "context_failures": 0,
+      "n": 4000,
+      "narrow_review_rate": 0.00275
+    },
+    "periodic": {
+      "broad_review_rate": 0.00525,
+      "broad_reviewed": 21,
+      "context_failures": 0,
+      "n": 4000,
+      "narrow_review_rate": 0.002
+    },
+    "producer_wrong": {
+      "broad_review_rate": 1.0,
+      "broad_reviewed": 4000,
+      "context_failures": 4000,
+      "n": 4000,
+      "narrow_review_rate": 1.0
+    },
+    "stale_registry": {
+      "broad_review_rate": 1.0,
+      "broad_reviewed": 4000,
+      "context_failures": 4000,
+      "n": 4000,
+      "narrow_review_rate": 1.0
+    },
+    "stress": {
+      "broad_review_rate": 0.0065,
+      "broad_reviewed": 26,
+      "context_failures": 0,
+      "n": 4000,
+      "narrow_review_rate": 0.002
+    },
+    "strong": {
+      "broad_review_rate": 1.0,
+      "broad_reviewed": 4000,
+      "context_failures": 0,
+      "n": 4000,
+      "narrow_review_rate": 1.0
+    },
+    "weak": {
+      "broad_review_rate": 0.519,
+      "broad_reviewed": 2076,
+      "context_failures": 0,
+      "n": 4000,
+      "narrow_review_rate": 0.51875
+    },
+    "wrong_example_binding": {
+      "broad_review_rate": 1.0,
+      "broad_reviewed": 4000,
+      "context_failures": 4000,
+      "n": 4000,
+      "narrow_review_rate": 1.0
+    }
+  },
+  "trace_sha256": "02c0c6f5a7b977ceff6cd393031b44f8bc7f0bb89b8c46e34b349435d8fbbf1d"
+}

@@ -1,0 +1,11 @@
+{
+  "after_commit_crash_recovery": true,
+  "altered_receipt_blocks_delivery": true,
+  "before_commit_crash_recovery": true,
+  "delivery_once": true,
+  "duplicate_queues_once": true,
+  "persistent_bounded_retries": true,
+  "review_does_not_queue_effect": true,
+  "sink_crash_recovery": true,
+  "transient_failure_recovers": true
+}

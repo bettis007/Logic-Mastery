@@ -149,6 +149,13 @@ authenticated-receipt tests and a 40,000-example frozen synthetic comparison.
 Correct context reduced periodic-change false alarms, but weak recall and
 signed-wrong-context gates failed. Both prototypes remain separate from the app.
 
+## Transactional delivery and corroboration
+
+[Delivery/corroboration report](docs/DELIVERY_CORROBORATION_REPORT.md) documents
+a synthetic local outbox with bounded retries and an extended context study.
+Delivery fixtures pass; off-bin and both-wrong-context gates remain failed.
+No live service integration or automatic blocking is enabled.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):

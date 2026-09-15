@@ -38,6 +38,9 @@ class ReceiptGuard:
         state=self.verify('state',*rows[0])
         if state['binding']!=self.binding:raise ValueError('Wrong key/configuration')
         return state
+    def record_effect(self,receipt,body,mac):
+        """Subclass hook; runs inside the receipt/state transaction."""
+        pass
     def inspect(self,message,now,crash=None):
         # Authenticate and validate before returning any stored receipt.
         preflight=Guard().inspect(message,now)
@@ -61,6 +64,7 @@ class ReceiptGuard:
             receipt={'binding':self.binding,'seq':seq,'request_sha256':request_hash,'outcome':outcome,'recorded_at':now}
             body=canonical(receipt).decode();mac=self.mac('receipt',body)
             self.db.execute('INSERT INTO receipts VALUES(?,?,?)',(seq,body,mac))
+            self.record_effect(receipt,body,mac)
             if crash=='before_commit':
                 import os;os._exit(71)
             self.db.execute('COMMIT')
