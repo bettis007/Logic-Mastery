@@ -1,0 +1,49 @@
+{
+  "targeted_tests": {
+    "passed": true,
+    "run": 12
+  },
+  "test_integration.py": {
+    "output": "{\n  \"replay_exact\": true,\n  \"all_13_records_match_canonical\": true,\n  \"labels_rejected_by_prediction\": true,\n  \"duplicate_prediction_id_rejected\": true,\n  \"hand_computed_metrics_match\": true,\n  \"missing_label_rejected\": true,\n  \"duplicate_label_rejected\": true,\n  \"mixed_target_rejected\": true,\n  \"provenance_not_self_certified\": true\n}",
+    "passed": true,
+    "stderr": ""
+  },
+  "test_integrity_audit.py": {
+    "output": "PASS: clean fixture, alteration, deletion, symlink, untracked addition, staged addition, and unpinned-reference rejection (7 checks).",
+    "passed": true,
+    "stderr": ""
+  },
+  "test_policy_contracts.py": {
+    "output": "92/92 synthetic policy contracts pass",
+    "passed": true,
+    "stderr": ""
+  },
+  "test_receipt_guard.py": {
+    "output": "{\n  \"after_commit_atomic_recovery\": true,\n  \"altered_receipt_rejected\": true,\n  \"altered_state_rejected\": true,\n  \"before_commit_atomic_recovery\": true,\n  \"concurrent_duplicate_same_receipt\": true,\n  \"duplicate_does_not_add_receipt\": true,\n  \"duplicate_returns_original_receipt\": true,\n  \"invalid_message_cannot_recover_receipt\": true,\n  \"rate_rejection_receipt_is_stable\": true,\n  \"restart_recovers_receipt\": true,\n  \"sequence_payload_conflict_rejected\": true,\n  \"wrong_receipt_key_rejected\": true\n}",
+    "passed": true,
+    "stderr": ""
+  },
+  "test_receipt_import.cjs": {
+    "output": "PASS: valid receipt accepted, malformed imports rejected, prior receipt preserved after failed import.",
+    "passed": true
+  },
+  "test_refinements.py": {
+    "output": "PASS: 10 malformed probability cases rejected; both numeric endpoints correct.",
+    "passed": true,
+    "stderr": ""
+  },
+  "test_server.py": {
+    "output": "{\n  \"page_served\": true,\n  \"only_allowlisted_assets\": true,\n  \"host_rejected\": true,\n  \"three_served_assets_match_disk_and_security_headers\": true,\n  \"traversal_not_served\": true,\n  \"invalid_token_rejected\": true,\n  \"token_required\": true,\n  \"cross_origin_rejected\": true,\n  \"prediction_succeeds\": true,\n  \"separate_evaluation_succeeds\": true,\n  \"batch_bound_enforced\": true,\n  \"invalid_shape_rejected\": true,\n  \"labels_not_passed_to_prediction\": true\n}",
+    "passed": true,
+    "stderr": ""
+  },
+  "test_transactional_delivery.py": {
+    "output": "{\n  \"after_commit_crash_recovery\": true,\n  \"altered_receipt_blocks_delivery\": true,\n  \"before_commit_crash_recovery\": true,\n  \"delivery_once\": true,\n  \"duplicate_queues_once\": true,\n  \"persistent_bounded_retries\": true,\n  \"review_does_not_queue_effect\": true,\n  \"sink_crash_recovery\": true,\n  \"transient_failure_recovers\": true\n}",
+    "passed": true,
+    "stderr": ""
+  },
+  "test_ui_state.cjs": {
+    "output": "PASS: overlapping actions ignored; mutation controls locked; success/error paths unlock.",
+    "passed": true
+  }
+}

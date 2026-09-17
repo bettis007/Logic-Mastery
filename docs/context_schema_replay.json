@@ -1,0 +1,20 @@
+{
+  "decision_trace_sha256": "02c0c6f5a7b977ceff6cd393031b44f8bc7f0bb89b8c46e34b349435d8fbbf1d",
+  "exact_match": true,
+  "gates": {
+    "bad_signature_review": true,
+    "both_wrong_recall": false,
+    "clean_false_alarm": true,
+    "missing_registry_review": true,
+    "off_bin_recall": false,
+    "periodic_false_alarm": true,
+    "producer_wrong_review": true,
+    "stale_registry_review": true,
+    "stress_false_alarm": true,
+    "strong_recall": true,
+    "weak_recall": true,
+    "wrong_example_binding_review": true
+  },
+  "overall_pass": false,
+  "scope": "Frozen synthetic study replay after schema hardening; no new threshold fit"
+}

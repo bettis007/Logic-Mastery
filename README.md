@@ -156,6 +156,15 @@ a synthetic local outbox with bounded retries and an extended context study.
 Delivery fixtures pass; off-bin and both-wrong-context gates remain failed.
 No live service integration or automatic blocking is enabled.
 
+## Current runtime refinements
+
+[Runtime refinement audit](docs/RUNTIME_REFINEMENT_REPORT.md) covers queue progress
+past delayed/exhausted work, authenticated retry/capacity policies, stricter context
+validation and safer receipt imports. Records are retained; no auto-migration or
+automatic archival is provided for earlier prototype ledgers. Later independent
+effects may overtake deferred effects, so strict global ordering is not guaranteed.
+Frozen detector failures remain open.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):

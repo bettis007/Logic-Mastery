@@ -1,5 +1,5 @@
 """Two simulated attestations plus residual-spectrum review; no real witnesses."""
-import argparse,hashlib,hmac,json
+import argparse,hashlib,hmac,json,math,re
 from pathlib import Path
 import numpy as np
 from signal_guard_sim import canonical
@@ -8,13 +8,27 @@ DEV_SEED=2026091501;TEST_SEED=2026091502
 KINDS=('clean','stress','periodic','weak','off_bin','strong','producer_wrong','both_wrong','stale_registry','missing_registry','bad_signature','wrong_example_binding')
 
 def attest(role,body):return {'body':body,'mac':hmac.new(KEYS[role],canonical(body),hashlib.sha256).hexdigest()}
+def finite_number(value):
+    if type(value) not in (int,float):return False
+    try:return math.isfinite(value)
+    except OverflowError:return False
+
 def check_context(a,b,example,now):
+    # Fixed-schema fixture boundary: malformed declarations request review.
+    fields={'id','expected_amplitude','noise_std','bin','issued_at','expires_at'}
+    if not isinstance(example,str) or not 0<len(example)<=200 or not finite_number(now) or now<0:return False
     for role,obj in [('producer',a),('registry',b)]:
-        if obj is None:return False
-        expected=hmac.new(KEYS[role],canonical(obj['body']),hashlib.sha256).hexdigest()
-        if not hmac.compare_digest(expected,obj['mac']):return False
-        body=obj['body']
-        if body['id']!=example or not body['issued_at']<=now<=body['expires_at']:return False
+        if not isinstance(obj,dict) or set(obj)!={'body','mac'}:return False
+        body=obj['body'];mac=obj['mac']
+        if not isinstance(body,dict) or set(body)!=fields:return False
+        if not isinstance(mac,str) or re.fullmatch(r'[0-9a-f]{64}',mac) is None:return False
+        if body['id']!=example or type(body['bin']) is not int or body['bin']!=15:return False
+        for name in ('expected_amplitude','noise_std','issued_at','expires_at'):
+            if not finite_number(body[name]):return False
+        if body['noise_std']<=0 or body['issued_at']<0 or not body['issued_at']<=now<=body['expires_at']:return False
+        if body['expires_at']-body['issued_at']>300:return False
+        expected=hmac.new(KEYS[role],canonical(body),hashlib.sha256).hexdigest()
+        if not hmac.compare_digest(expected,mac):return False
     return a['body']==b['body']
 
 def dataset(seed,n,kinds):
