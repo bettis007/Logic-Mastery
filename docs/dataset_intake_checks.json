@@ -1,0 +1,11 @@
+{
+  "scope": "Synthetic dataset-intake contracts only; not external accuracy",
+  "command": "python -m unittest -v test_dataset_intake",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_compatible_synthetic_inputs_do_not_become_independent_evidence (test_dataset_intake.IntakeTests.test_compatible_synthetic_inputs_do_not_become_independent_evidence) ... ok\ntest_digest_family_and_inventory_mismatch_rejected (test_dataset_intake.IntakeTests.test_digest_family_and_inventory_mismatch_rejected) ... ok\ntest_identical_features_with_different_id_and_family_rejected (test_dataset_intake.IntakeTests.test_identical_features_with_different_id_and_family_rejected) ... ok\ntest_incompatible_feature_schema_and_label_target_rejected (test_dataset_intake.IntakeTests.test_incompatible_feature_schema_and_label_target_rejected) ... ok\ntest_integer_float_and_negative_zero_hashes_match (test_dataset_intake.IntakeTests.test_integer_float_and_negative_zero_hashes_match) ... ok\ntest_missing_mismatched_and_duplicate_ids_rejected (test_dataset_intake.IntakeTests.test_missing_mismatched_and_duplicate_ids_rejected) ... ok\ntest_nonfinite_boolean_and_out_of_range_features_rejected (test_dataset_intake.IntakeTests.test_nonfinite_boolean_and_out_of_range_features_rejected) ... ok\ntest_reference_labels_cannot_enter_inference_features (test_dataset_intake.IntakeTests.test_reference_labels_cannot_enter_inference_features) ... ok\ntest_source_family_leakage_rejected (test_dataset_intake.IntakeTests.test_source_family_leakage_rejected) ... ok\ntest_strict_json_and_exclusive_cli_output (test_dataset_intake.IntakeTests.test_strict_json_and_exclusive_cli_output) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 5.333s\n\nOK\n",
+  "source_sha256": {
+    "dataset_intake.py": "836c42e22255c31ce792d9bb1f1084ca949bc690bba91ab53334088909dadb4e",
+    "test_dataset_intake.py": "b594ca7062be61d9db6aaa4f61bd453a49345c5e553ebb8f7faf23d3d91ac8b2"
+  }
+}

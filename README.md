@@ -182,6 +182,14 @@ production retention policy is implemented.
 specifies the missing evidence needed for an external test. Independent accuracy
 and live browser QA remain unverified; the detector's failed gates remain open.
 
+## Dataset intake
+
+Dataset recovery and intake now have a [compatibility preflight](docs/DATASET_INTAKE.md).
+Related saved waveform records were located, but compatible independent reference
+annotations remain unavailable. The standalone checker rejects schema mismatches,
+source-family leakage and declared cross-split exact duplicates before scoring;
+technical acceptance does not certify provenance or label quality.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):
