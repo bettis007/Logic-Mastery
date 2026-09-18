@@ -190,6 +190,15 @@ annotations remain unavailable. The standalone checker rejects schema mismatches
 source-family leakage and declared cross-split exact duplicates before scoring;
 technical acceptance does not certify provenance or label quality.
 
+## Offline waveform replay and review preparation
+
+[Saved-waveform replay](docs/WAVEFORM_REPLAY.md) preserves complex IQ and partial
+windows, leaves unknown acquisition settings unset, and produces diagnostics
+without applying the synthetic detector. Recovered-record replay was identical
+across two fresh processes. The packet generator creates neutral item names,
+separate empty reviewer worksheets, a coordinator mapping and a blank claim
+annotation template. Independent reference labels remain unavailable.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):

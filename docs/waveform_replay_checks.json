@@ -1,0 +1,29 @@
+{
+  "scope": "Synthetic adapter contracts and saved-array software replay; no external accuracy",
+  "tests": {
+    "command": "python -m unittest -v test_waveform_replay",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_complex_positive_and_negative_tones_preserve_frequency_sign (test_waveform_replay.ReplayTests.test_complex_positive_and_negative_tones_preserve_frequency_sign) ... ok\ntest_huge_shape_header_rejected_before_allocation (test_waveform_replay.ReplayTests.test_huge_shape_header_rejected_before_allocation) ... ok\ntest_packet_preserves_bytes_and_leaves_reviews_empty (test_waveform_replay.ReplayTests.test_packet_preserves_bytes_and_leaves_reviews_empty) ... ok\ntest_partial_tail_and_q_only_samples_retained (test_waveform_replay.ReplayTests.test_partial_tail_and_q_only_samples_retained) ... ok\ntest_unsupported_and_malformed_arrays_rejected (test_waveform_replay.ReplayTests.test_unsupported_and_malformed_arrays_rejected) ... ok\ntest_zero_and_dc_do_not_invent_ac_frequency (test_waveform_replay.ReplayTests.test_zero_and_dc_do_not_invent_ac_frequency) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.021s\n\nOK\n"
+  },
+  "replay_aggregate": {
+    "scope": "Offline processing of saved arrays; no independently verified acquisition or anomaly labels",
+    "source_files": 20,
+    "total_samples": 326400,
+    "total_windows": 2560,
+    "partial_windows": 20,
+    "samples_dropped": 0,
+    "fresh_process_replay_bytes_equal": true,
+    "review_status": "unannotated",
+    "independent_accuracy": null,
+    "sample_rate_verified": false,
+    "center_frequency_verified": false,
+    "old_detector_applied": false,
+    "source_bytes_preserved": true
+  },
+  "source_sha256": {
+    "waveform_replay.py": "caf624a906a24331d067603f5ecca335b093065ff569ca87f2623244b3b22b43",
+    "prepare_review_packet.py": "875aa3f642b7f838e5c88a1aa3eba0785d2d749d215a07dffe75eaf795a4551f",
+    "test_waveform_replay.py": "5b103d910780744227178fa63d60ea4bd60c830fdda0c363f2bd40d4d8ed1762"
+  }
+}
