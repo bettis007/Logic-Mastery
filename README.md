@@ -210,6 +210,10 @@ remain blocked; reviewer agreement alone does not establish external accuracy.
 exact Git source snapshots. Claim wording and citations are now bound together
 by the audit; reference answers and numeric feature values remain unfilled.
 
+[Packet inspection](docs/PACKET_INSPECTION.md) verifies source bytes and cited JSON
+passages and recomputes saved waveform diagnostics before review. It reports
+missing annotations without generating labels or establishing external accuracy.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):
