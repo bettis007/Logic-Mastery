@@ -1,0 +1,16 @@
+{
+  "id": "waveform-context-review-draft-a",
+  "status": "draft",
+  "approval_reference": null,
+  "target": "waveform_context",
+  "reference_labels": ["consistent_with_documented_baseline", "deviation_from_documented_baseline"],
+  "evidence_categories": ["saved_array_observation", "derived_from_documented_context"],
+  "handling_actions": ["retain_for_evaluation", "request_context_review"],
+  "requirements": [
+    "A documented baseline and allowed deviation rule must be agreed before annotation",
+    "Both labels require evidence references; absence of visible anomalies is not a verified negative",
+    "Missing baseline, acquisition settings or permission requires exclusion with a reason",
+    "Frequency diagnostics in cycles per sample are not absolute RF measurements",
+    "No label identifies an attacker, biological effect or physical cause"
+  ]
+}

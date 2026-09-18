@@ -1,0 +1,33 @@
+{
+  "scope": "Synthetic workflow checks and actual unfilled-packet rejection; no completed independent annotations",
+  "test_command": "python -m unittest -v test_review_audit",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_agreement_is_not_independence_or_accuracy (test_review_audit.ReviewTests.test_agreement_is_not_independence_or_accuracy) ... ok\ntest_blank_packet_and_draft_rubric_remain_blocked (test_review_audit.ReviewTests.test_blank_packet_and_draft_rubric_remain_blocked) ... ok\ntest_claim_rubric_uses_separate_target (test_review_audit.ReviewTests.test_claim_rubric_uses_separate_target) ... ok\ntest_disagreement_is_retained_without_auto_label (test_review_audit.ReviewTests.test_disagreement_is_retained_without_auto_label) ... ok\ntest_incomplete_and_all_excluded_are_not_approved (test_review_audit.ReviewTests.test_incomplete_and_all_excluded_are_not_approved) ... ok\ntest_same_identity_and_wrong_protocol_rejected (test_review_audit.ReviewTests.test_same_identity_and_wrong_protocol_rejected) ... ok\ntest_source_mutation_missing_items_and_duplicate_items_rejected (test_review_audit.ReviewTests.test_source_mutation_missing_items_and_duplicate_items_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.004s\n\nOK\n",
+  "actual_blank_packet_audit": {
+    "scope": "Worksheet consistency and declared reviewer agreement only",
+    "technical_review_complete": false,
+    "independence_verified": false,
+    "external_accuracy": null,
+    "protocol_approved": false,
+    "blockers": [
+      "Rubric remains a draft; agreement is not an evaluation approval",
+      "Missing reviewer identity declaration"
+    ],
+    "agreements": [],
+    "disagreements": [],
+    "joint_exclusions": [],
+    "incomplete": [],
+    "jointly_annotated": 0,
+    "joint_label_agreement_rate": null,
+    "rubric_sha256": "926e89e758d22ff3d0033464782d27e065f67102a17cb9ab6a14650684513ca5",
+    "ready_for_adjudication": false,
+    "warning": "Declared identities, references and approval are not authenticated. Agreement is not correctness."
+  },
+  "source_sha256": {
+    "review_audit.py": "4f2fc6f63d45cd61b14d8cc9d44b2c996dee9b9a83608c85c50e438781d3f8c3",
+    "test_review_audit.py": "fd16f571c5c655c66337e86d1111591779886bdde478cddad45ca44d406ed5de",
+    "docs/waveform_review_rubric.json": "1503741464ae927393b630fb9101c7f0183875c235647677b480202c608f5d0f",
+    "docs/claim_review_rubric.json": "fbab0240d03b3d141b7e5fbdf3fbbad32c1f0ec65dac53b0176857fd414b8028"
+  }
+}

@@ -199,6 +199,13 @@ across two fresh processes. The packet generator creates neutral item names,
 separate empty reviewer worksheets, a coordinator mapping and a blank claim
 annotation template. Independent reference labels remain unavailable.
 
+## Reviewer workflow
+
+[Review completion checks](docs/REVIEW_WORKFLOW.md) cover separate draft waveform
+and claim rubrics, source/rubric binding, incomplete answers and disagreements.
+The checker never creates adjudicated labels. Blank packets and draft protocols
+remain blocked; reviewer agreement alone does not establish external accuracy.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):

@@ -1,0 +1,17 @@
+{
+  "id": "claim-evidence-review-draft-a",
+  "status": "draft",
+  "approval_reference": null,
+  "target": "claim_evidence",
+  "reference_labels": ["supported_in_supplied_context", "contradicted_in_supplied_context", "insufficient_evidence"],
+  "evidence_categories": ["documented_observation", "derived", "simulated", "narrative", "unverified"],
+  "handling_actions": ["retain_with_attribution", "qualify", "quarantine"],
+  "requirements": [
+    "Review the exact claim and cited source passages, not classifier predictions",
+    "Support is bounded to supplied evidence and does not certify universal truth",
+    "A simulation can support a claim about simulated output without supporting its real-world counterpart",
+    "Quarantine is a handling action, not proof the claim is false",
+    "Missing source material requires exclusion with a reason; insufficient_evidence requires an actual reviewed context",
+    "Mapping these fields to the legacy five-class scorer remains unapproved"
+  ]
+}
