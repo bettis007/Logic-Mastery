@@ -165,6 +165,23 @@ automatic archival is provided for earlier prototype ledgers. Later independent
 effects may overtake deferred effects, so strict global ordering is not guaranteed.
 Frozen detector failures remain open.
 
+## Validated snapshots and legacy migration
+
+`ledger_archive.copy_ledger` creates a new validated delivery-ledger snapshot
+without replacing or pruning its source. It includes committed WAL records,
+checks authenticated state/receipts/policy, and preserves queue progress and
+spent retries. Supported pre-policy ledgers require an explicit historical retry
+budget and new capacity; those declarations cannot be recovered from old bytes.
+
+[Archive validation report](docs/ARCHIVE_VALIDATION_REPORT.md) explains usage,
+failure handling and the measured checks. A snapshot does not free capacity,
+copy the sink or authorize running two active workers. No automatic cutover or
+production retention policy is implemented.
+
+[Independent context evaluation preparation](docs/INDEPENDENT_CONTEXT_EVALUATION.md)
+specifies the missing evidence needed for an external test. Independent accuracy
+and live browser QA remain unverified; the detector's failed gates remain open.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):

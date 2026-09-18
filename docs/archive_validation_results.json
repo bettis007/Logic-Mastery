@@ -1,0 +1,33 @@
+{
+  "scope": "Disposable local software fixtures; no external-source accuracy or power-loss test",
+  "python": "3.12.14",
+  "all_commands_passed": true,
+  "commands": [
+    {
+      "command": "python -m unittest -v test_ledger_archive test_runtime_refinements",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_committed_wal_records_are_included (test_ledger_archive.ArchiveTests.test_committed_wal_records_are_included) ... ok\ntest_current_copy_preserves_history_and_continues_pending_work (test_ledger_archive.ArchiveTests.test_current_copy_preserves_history_and_continues_pending_work) ... ok\ntest_existing_destination_and_same_source_are_preserved (test_ledger_archive.ArchiveTests.test_existing_destination_and_same_source_are_preserved) ... ok\ntest_failed_publication_preserves_source_and_cleans_temporary_copy (test_ledger_archive.ArchiveTests.test_failed_publication_preserves_source_and_cleans_temporary_copy) ... ok\ntest_legacy_limits_cannot_erase_spent_retries_or_rows (test_ledger_archive.ArchiveTests.test_legacy_limits_cannot_erase_spent_retries_or_rows) ... ok\ntest_legacy_migration_requires_limits_and_keeps_attempts (test_ledger_archive.ArchiveTests.test_legacy_migration_requires_limits_and_keeps_attempts) ... ok\ntest_missing_queue_invalid_status_and_deleted_receipt_rejected (test_ledger_archive.ArchiveTests.test_missing_queue_invalid_status_and_deleted_receipt_rejected) ... ok\ntest_policy_alteration_and_override_rejected (test_ledger_archive.ArchiveTests.test_policy_alteration_and_override_rejected) ... ok\ntest_review_and_rate_receipts_are_preserved_without_effects (test_ledger_archive.ArchiveTests.test_review_and_rate_receipts_are_preserved_without_effects) ... ok\ntest_schema_trigger_and_unreadable_database_rejected (test_ledger_archive.ArchiveTests.test_schema_trigger_and_unreadable_database_rejected) ... ok\ntest_wrong_key_and_altered_receipt_rejected (test_ledger_archive.ArchiveTests.test_wrong_key_and_altered_receipt_rejected) ... ok\ntest_agreement_still_does_not_prove_truth (test_runtime_refinements.Context.test_agreement_still_does_not_prove_truth) ... ok\ntest_invalid_signed_fields_request_review (test_runtime_refinements.Context.test_invalid_signed_fields_request_review) ... ok\ntest_malformed_envelopes_request_review (test_runtime_refinements.Context.test_malformed_envelopes_request_review) ... ok\ntest_nonfinite_fields_and_clock_request_review (test_runtime_refinements.Context.test_nonfinite_fields_and_clock_request_review) ... ok\ntest_valid_and_expiry_boundaries (test_runtime_refinements.Context.test_valid_and_expiry_boundaries) ... ok\ntest_wrong_roles_and_disagreement_request_review (test_runtime_refinements.Context.test_wrong_roles_and_disagreement_request_review) ... ok\ntest_capacity_rolls_back_receipt_and_sequence (test_runtime_refinements.Delivery.test_capacity_rolls_back_receipt_and_sequence) ... ok\ntest_delayed_item_does_not_block_ready_item (test_runtime_refinements.Delivery.test_delayed_item_does_not_block_ready_item) ... ok\ntest_exhausted_item_does_not_block_after_restart (test_runtime_refinements.Delivery.test_exhausted_item_does_not_block_after_restart) ... ok\ntest_invalid_clock_rejected (test_runtime_refinements.Delivery.test_invalid_clock_rejected) ... ok\ntest_policy_byte_alteration_rejected (test_runtime_refinements.Delivery.test_policy_byte_alteration_rejected) ... ok\ntest_retry_policy_cannot_change_on_reopen (test_runtime_refinements.Delivery.test_retry_policy_cannot_change_on_reopen) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 0.123s\n\nOK\n"
+    },
+    {
+      "command": "python test_transactional_delivery.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"after_commit_crash_recovery\": true,\n  \"altered_receipt_blocks_delivery\": true,\n  \"before_commit_crash_recovery\": true,\n  \"delivery_once\": true,\n  \"duplicate_queues_once\": true,\n  \"persistent_bounded_retries\": true,\n  \"review_does_not_queue_effect\": true,\n  \"sink_crash_recovery\": true,\n  \"transient_failure_recovers\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python test_receipt_guard.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"after_commit_atomic_recovery\": true,\n  \"altered_receipt_rejected\": true,\n  \"altered_state_rejected\": true,\n  \"before_commit_atomic_recovery\": true,\n  \"concurrent_duplicate_same_receipt\": true,\n  \"duplicate_does_not_add_receipt\": true,\n  \"duplicate_returns_original_receipt\": true,\n  \"invalid_message_cannot_recover_receipt\": true,\n  \"rate_rejection_receipt_is_stable\": true,\n  \"restart_recovers_receipt\": true,\n  \"sequence_payload_conflict_rejected\": true,\n  \"wrong_receipt_key_rejected\": true\n}\n",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "ledger_archive.py": "8e6abb3122145c1da10f96cba423c712268e23f2e134fe9bc7a185df1b7559a3",
+    "test_ledger_archive.py": "6e1daac525a885ff31cd8a1bf5fc9f4fc69f84027d952e37141a58f13ef3ddb2",
+    "transactional_delivery.py": "f55e64bbe64d29421c65187fa49c8aa91f5fe1380e05c0da67640f6992b840a6",
+    "receipt_guard.py": "407c5261e6f9dd526966b26c35a2928678c1e0e0067362fb247e5cfa2ad104cb",
+    "signal_guard_sim.py": "83d417e8d7b63040d985db26a874defbec5e205a0e16b7e809ee08062cbd29d8",
+    "corroborated_context_study.py": "d7ba43e1605ec73d2b889d9faac2b2f269d503d419b23c6edd7e1842de718683"
+  }
+}
