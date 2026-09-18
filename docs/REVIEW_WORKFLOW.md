@@ -48,9 +48,10 @@ python review_audit.py frozen_blank.json reviewer_a.json reviewer_b.json rubric.
 ```
 
 The existing waveform packet worksheets already use this item structure. Claim
-reviews require claim-specific source items in the same structure; the blank
-claim collection template does not yet contain those items. Do not substitute
-waveform rows or synthetic examples just to obtain a passing audit.
+reviews now require exact claim text and source references committed together;
+see SOURCE_EVIDENCE.md and `prepare_claim_evidence.py` for concrete project-source
+items. The original empty claim collection template does not contain those items.
+Do not substitute waveform rows or synthetic examples just to obtain a passing audit.
 
 ## What the checker establishes
 

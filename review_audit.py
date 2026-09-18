@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from dataset_intake import parse_json
+from claim_identity import claim_digest
 
 
 def require(condition, message):
@@ -53,6 +54,8 @@ def audit(template, reviews, rubric):
             sha = row.get('source_sha256')
             require(isinstance(sha, str) and len(sha) == 64 and all(c in '0123456789abcdef' for c in sha)
                     and text(row.get('source_family')), 'Invalid template source identity')
+            if rubric['target'] == 'claim_evidence':
+                require(sha == claim_digest(row), 'Claim template identity mismatch')
         require(isinstance(reviews, list) and len(reviews) == 2, 'Two reviewer worksheets required')
         ids, tables = [], []
         for role, review in zip(('reviewer_a', 'reviewer_b'), reviews):
@@ -72,6 +75,8 @@ def audit(template, reviews, rubric):
                 row = table[key]
                 require(row.get('source_sha256') == original['source_sha256']
                         and row.get('source_family') == original['source_family'], 'Review source binding mismatch')
+                if rubric['target'] == 'claim_evidence':
+                    require(claim_digest(row) == original['source_sha256'], 'Reviewed claim text or references changed')
                 excluded = text(row.get('exclusion_reason'))
                 values = tuple(row.get(k) for k in ('reference_label', 'evidence_category', 'handling_action'))
                 if excluded:

@@ -206,6 +206,10 @@ and claim rubrics, source/rubric binding, incomplete answers and disagreements.
 The checker never creates adjudicated labels. Blank packets and draft protocols
 remain blocked; reviewer agreement alone does not establish external accuracy.
 
+[Concrete source-evidence packets](docs/SOURCE_EVIDENCE.md) pin project claims to
+exact Git source snapshots. Claim wording and citations are now bound together
+by the audit; reference answers and numeric feature values remain unfilled.
+
 ## Repository description
 
 Suggested GitHub About text (also in `.github/description.txt`):

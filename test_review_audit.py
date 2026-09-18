@@ -5,6 +5,7 @@ import json
 import unittest
 from pathlib import Path
 from review_audit import audit
+from claim_identity import claim_digest
 
 
 class ReviewTests(unittest.TestCase):
@@ -77,13 +78,27 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(self.rubric['target'],'claim_evidence')
         self.assertFalse(self.result()['ready_for_adjudication'])
         self.rubric.update(status='approved',approval_reference='Fictional claim rubric test')
+        self.template['items'][0].update(claim_text='A synthetic report contains this example.',
+            source_references=[{'document':'synthetic.json','sha256':'b'*64,'locator':'/example'}])
+        self.template['items'][0]['source_sha256']=claim_digest(self.template['items'][0])
         digest=hashlib.sha256(json.dumps(self.rubric,sort_keys=True,separators=(',',':')).encode()).hexdigest()
         for review in self.reviews:
             review['protocol_reference']=digest
+            for key in ('claim_text','source_references','source_sha256'):
+                review['items'][0][key]=copy.deepcopy(self.template['items'][0][key])
             review['items'][0].update(reference_label='supported_in_supplied_context',
                                      evidence_category='simulated',handling_action='retain_with_attribution')
         self.assertTrue(self.result()['ready_for_adjudication'])
         self.assertIsNone(self.result()['external_accuracy'])
+
+    def test_claim_text_and_reference_edits_cannot_keep_old_identity(self):
+        self.test_claim_rubric_uses_separate_target()
+        original=copy.deepcopy(self.reviews)
+        for field in ('claim_text','document','locator','sha256'):
+            self.reviews=copy.deepcopy(original)
+            if field=='claim_text':self.reviews[0]['items'][0]['claim_text']='A different claim.'
+            else:self.reviews[0]['items'][0]['source_references'][0][field]='c'*64 if field=='sha256' else 'different'
+            self.assertFalse(self.result()['technical_review_complete'])
 
 
 if __name__=='__main__':unittest.main()

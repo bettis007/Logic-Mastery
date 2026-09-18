@@ -1,0 +1,18 @@
+{
+  "scope": "Source packet preparation and synthetic workflow checks, not external accuracy",
+  "source_snapshot_commit": "6102153d2ac16a62b771c09e0986ab5be5ff1cdf",
+  "candidate_claim_count": 4,
+  "independent_annotations_created": 0,
+  "feature_values_filled": 0,
+  "packet_hashes_verified": true,
+  "test_exit_code": 0,
+  "test_stdout": "",
+  "test_stderr": "test_agreement_is_not_independence_or_accuracy (test_review_audit.ReviewTests.test_agreement_is_not_independence_or_accuracy) ... ok\ntest_blank_packet_and_draft_rubric_remain_blocked (test_review_audit.ReviewTests.test_blank_packet_and_draft_rubric_remain_blocked) ... ok\ntest_claim_rubric_uses_separate_target (test_review_audit.ReviewTests.test_claim_rubric_uses_separate_target) ... ok\ntest_claim_text_and_reference_edits_cannot_keep_old_identity (test_review_audit.ReviewTests.test_claim_text_and_reference_edits_cannot_keep_old_identity) ... ok\ntest_disagreement_is_retained_without_auto_label (test_review_audit.ReviewTests.test_disagreement_is_retained_without_auto_label) ... ok\ntest_incomplete_and_all_excluded_are_not_approved (test_review_audit.ReviewTests.test_incomplete_and_all_excluded_are_not_approved) ... ok\ntest_same_identity_and_wrong_protocol_rejected (test_review_audit.ReviewTests.test_same_identity_and_wrong_protocol_rejected) ... ok\ntest_source_mutation_missing_items_and_duplicate_items_rejected (test_review_audit.ReviewTests.test_source_mutation_missing_items_and_duplicate_items_rejected) ... ok\ntest_missing_and_duplicate_references_rejected (test_claim_packet.ClaimPacket.test_missing_and_duplicate_references_rejected) ... ok\ntest_pinned_sources_blank_fields_and_exclusive_creation (test_claim_packet.ClaimPacket.test_pinned_sources_blank_fields_and_exclusive_creation) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.166s\n\nOK\n",
+  "source_sha256": {
+    "claim_identity.py": "b564fdc564b3ff5615b763f08f542f42976d0069b08cead67ddfe29e26b87dce",
+    "review_audit.py": "0a8a1042f0f0570bc11717281c7d52b866d56dbc7f6f741172e1d58f001f25fc",
+    "prepare_claim_evidence.py": "27e7b8c69e5a35b00fb223e28bb37d018fbe2abc5a1c0eef5b4dc6703eabf35a",
+    "test_review_audit.py": "6781cde7814c4e68cc1dbd45f1ad131c9518d872edabb6f23ef71732a448094b",
+    "test_claim_packet.py": "85fdaa893bb0f087bbc45e34a7c829aa71237f46a10db37b03908ed980773670"
+  }
+}
